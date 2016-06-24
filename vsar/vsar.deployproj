@@ -25,12 +25,10 @@
   <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
   <!-- vertag<:>end -->
   <ItemGroup>
+    <Folder Include="Artifact\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Artifact\Artifactfile.json" />
-    <None Include="Artifact\ChocolateyPackageInstaller.ps1" />
-    <None Include="Artifact\startChocolatey.ps1" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
@@ -38,6 +36,9 @@
     <None Include="DSC\VMConfigConfiguration.ps1" />
     <None Include="Templates\WindowsVirtualMachine.json" />
     <None Include="Templates\WindowsVirtualMachine.parameters.json" />
+    <None Include="vsarSelenium\Artifacts\windows-vsarSelenium\Artifactfile.json" />
+    <None Include="vsarSelenium\Artifacts\windows-vsarSelenium\ChocolateyPackageInstaller.ps1" />
+    <None Include="vsarSelenium\Artifacts\windows-vsarSelenium\startChocolatey.ps1" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
