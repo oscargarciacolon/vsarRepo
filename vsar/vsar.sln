@@ -5,6 +5,17 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "vsarSel", "vsarSel.deployproj", "{C3809E4C-7BD3-401B-91E0-76861AF0FC76}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsarSelenium", "vsarSelenium", "{6B75C47C-F848-4939-BAF1-2620E2303003}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifacts", "Artifacts", "{A3BF1F07-0FE5-4AA8-B9CC-7F57B97CC7E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows-vsarSelenium", "windows-vsarSelenium", "{657FB7FE-0897-425A-BA8C-D1883FBE140D}"
+	ProjectSection(SolutionItems) = preProject
+		vsarSelenium\Artifacts\windows-vsarSelenium\Artifactfile.json = vsarSelenium\Artifacts\windows-vsarSelenium\Artifactfile.json
+		vsarSelenium\Artifacts\windows-vsarSelenium\ChocolateyPackageInstaller.ps1 = vsarSelenium\Artifacts\windows-vsarSelenium\ChocolateyPackageInstaller.ps1
+		vsarSelenium\Artifacts\windows-vsarSelenium\startChocolatey.ps1 = vsarSelenium\Artifacts\windows-vsarSelenium\startChocolatey.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3BF1F07-0FE5-4AA8-B9CC-7F57B97CC7E7} = {6B75C47C-F848-4939-BAF1-2620E2303003}
+		{657FB7FE-0897-425A-BA8C-D1883FBE140D} = {A3BF1F07-0FE5-4AA8-B9CC-7F57B97CC7E7}
 	EndGlobalSection
 EndGlobal
