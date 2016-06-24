@@ -2,37 +2,38 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "existingCustomImageId": {
+      "type": "string",
+      "metadata": {
+        "description": "The id of an existing custom image which will be used to create the new vm. The specified image must exist in the lab (identified via the 'existingLabName' parameter)."
+      }
+    },
     "newLabName": {
       "type": "string",
       "metadata": {
         "description": "The name of the new lab instance to be created"
-      },
-      "newVMName": {
-        "type": "string",
-        "metadata": {
-          "description": "The name of the new vm to be created."
-        }
-      },
-      "existingCustomImageId": {
-        "type": "string",
-        "metadata": {
-          "description": "The id of an existing custom image which will be used to create the new vm. The specified image must exist in the lab (identified via the 'existingLabName' parameter)."
-        }
-      },
-      "newVMSize": {
-        "type": "string",
-        "metadata": {
-          "description": "The size of the new vm to be created."
-        }
+      }
+    },
+    "newVMName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the new vm to be created."
+      }
+    },
+    "newVMSize": {
+      "type": "string",
+      "metadata": {
+        "description": "The size of the new vm to be created."
       }
     }
+
   },
   "variables": {
     "labVirtualNetworkName": "[concat('Dtl', parameters('newLabName'))]",
     "labSubnetName": "[concat(variables('labVirtualNetworkName'), 'Subnet')]",
-    "labVirtualNetworkId": "[resourceId('Microsoft.DevTestLab/labs/virtualnetworks', parameters('existingLabName'), variables('labVirtualNetworkName'))]",
-    "resourceName": "[concat(parameters('existingLabName'), '/', parameters('newVMName'))]",
-    "resourceType": "Microsoft.DevTestLab/labs/virtualMachines"
+    "labVirtualNetworkId": "[resourceId('Microsoft.DevTestLab/labs/virtualnetworks', parameters('newLabName'), variables('labVirtualNetworkName'))]",
+    "resourceName": "[concat(parameters('newLabName'), '/', parameters('newVMName'))]",
+    "resourceType": "Microsoft.DevTestLab/labs/virtualMachines",
   },
   "resources": [
     {
@@ -74,7 +75,7 @@
     },
     "vmId": {
       "type": "string",
-      "value": "[resourceId(variables('resourceType'), parameters('existingLabName'), parameters('newVMName'))]"
+      "value": "[resourceId(variables('resourceType'), parameters('newLabName'), parameters('newVMName'))]"
     }
   }
 }
