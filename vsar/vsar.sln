@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "vsar", "vsar.deployproj", "{C3809E4C-7BD3-401B-91E0-76861AF0FC76}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "vsarSel", "vsarSel.deployproj", "{C3809E4C-7BD3-401B-91E0-76861AF0FC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
